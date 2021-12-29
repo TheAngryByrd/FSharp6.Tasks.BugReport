@@ -5,7 +5,7 @@ open Npgsql
 open FSharp.Control.Tasks
 
 module Db =
-    let connectionString = "Host=localhost;Username=postgres;Password=postgres;Database=lims;Pooling=true"
+    let connectionString = "Host=localhost;Username=postgres;Password=postgres;Database=postgres;Pooling=true"
     
     let openConnectionAsync() = 
         task {
