@@ -4,15 +4,15 @@ open System.IO
 open System.Threading.Tasks
 
 [<AllowNullLiteral>]
-    type Request() = class end
-    
-    [<AllowNullLiteral>]
-    type Response() =
-        member val ResponseStream = new MemoryStream() with get
-    
-    type Client() =
-        member x.GetResponseAsync(request : Request) =
-            Response() |> Task.FromResult
+type Request() = class end
+
+[<AllowNullLiteral>]
+type Response() =
+    member val ResponseStream = new MemoryStream() with get
+
+type Client() =
+    member x.GetResponseAsync(request : Request) =
+        Response() |> Task.FromResult
 
 module Native =
     
