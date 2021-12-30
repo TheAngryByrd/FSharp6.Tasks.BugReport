@@ -7,18 +7,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Native.fs" />
-        <Compile Include="Ply.fs" />
+        <Compile Include="TaskResult.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Npgsql" Version="6.0.2" />
+      <PackageReference Include="Plough.ControlFlow" Version="1.0.0" />
       <PackageReference Include="Ply" Version="0.3.1" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\FSharp6.Tasks.BugReport.TransactionScope.CSharp\FSharp6.Tasks.BugReport.TransactionScope.CSharp.csproj" />
+      <ProjectReference Include="..\FSharp6.Tasks.BugReport.TransactionScope.NativeTaskResult\FSharp6.Tasks.BugReport.TransactionScope.NativeTaskResult.fsproj" />
     </ItemGroup>
 
 </Project>
