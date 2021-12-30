@@ -38,19 +38,25 @@ let performScopedWork context =
 
 let scope3 () =
     task {
+        use scope = Db.createTransactionScope()
         do! performScopedWork "scope3"
+        scope.Complete()
     }
     
 
 let scope2 () =
     task {
+        use scope = Db.createTransactionScope()
         do! performScopedWork "scope2"
         do! scope3 ()
+        scope.Complete()
     }
     
 
 let scope1 () =
     task {
+        use scope = Db.createTransactionScope()
         do! performScopedWork "scope1"
         do! scope2()
+        scope.Complete()
     }

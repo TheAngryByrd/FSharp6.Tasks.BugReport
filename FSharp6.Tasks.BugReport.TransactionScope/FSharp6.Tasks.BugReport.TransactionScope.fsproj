@@ -17,4 +17,8 @@
       <PackageReference Include="Ply" Version="0.3.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\FSharp6.Tasks.BugReport.TransactionScope.CSharp\FSharp6.Tasks.BugReport.TransactionScope.CSharp.csproj" />
+    </ItemGroup>
+
 </Project>
