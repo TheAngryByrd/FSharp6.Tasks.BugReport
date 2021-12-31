@@ -27,10 +27,16 @@ type TaskResultBuilder() =
 
     member inline _.Delay(generator : unit -> Task<Result<'a, 'e>>) : unit -> Task<Result<'a, 'e>> =
         generator
+        //TODO: version below fixes the issue
+        (*fun () -> task {
+            let! s = generator ()
+            return s
+        }*)
 
     member inline _.Using(resource : 'a :> IDisposable, binder : 'a -> Task<Result<'b, 'e>>) : Task<Result<'b, 'e>> =
         task {
             //TODO: change this to use - net6 will result in IAsyncDisposable compile time error
+            // TODO: use within F# 6 task CE in net6 (but not in netstandard) constraints to IAsyncDisposable  
             let res = resource
             try
                 let! result = binder res

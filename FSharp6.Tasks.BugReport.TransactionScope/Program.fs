@@ -65,5 +65,5 @@ let scope1 () =
 [<EntryPoint>]
 let main _argv =
     printfn "Native task computation."
-    let asdas = scope1().GetAwaiter().GetResult()
+    let _ = scope1().GetAwaiter().GetResult()
     0
