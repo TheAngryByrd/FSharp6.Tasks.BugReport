@@ -26,12 +26,12 @@ type TaskResultBuilder() =
         }
 
     member inline _.Delay(generator : unit -> Task<Result<'a, 'e>>) : unit -> Task<Result<'a, 'e>> =
-        generator
+        // generator
         //TODO: version below fixes the issue
-        (*fun () -> task {
+        fun () -> task {
             let! s = generator ()
             return s
-        }*)
+        }
 
     member inline _.Using(resource : 'a :> IDisposable, binder : 'a -> Task<Result<'b, 'e>>) : Task<Result<'b, 'e>> =
         task {
@@ -47,7 +47,7 @@ type TaskResultBuilder() =
         
     member inline _.Run(f : unit -> Task<'m>) = f ()
     
-let taskResult = TaskResultBuilder()
+let taskResultTester = TaskResultBuilder()
 
 // Having members as extensions gives them lower priority in
 // overload resolution between Task<'a> and Task<Either<'a>>.

@@ -3,6 +3,7 @@ module Main
 open System.Transactions
 open Npgsql
 open Net6.TaskResult
+open FsToolkit.ErrorHandling
 
 module Db =
     let connectionString = "Host=localhost;Username=postgres;Password=postgres;Database=postgres;Pooling=true"

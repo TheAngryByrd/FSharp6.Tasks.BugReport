@@ -14,7 +14,8 @@
     <ItemGroup>
       <PackageReference Include="Npgsql" Version="6.0.2" />
       <PackageReference Include="Plough.ControlFlow" Version="1.0.0" />
-      <PackageReference Include="Ply" Version="0.3.1" />
+      <PackageReference Include="FsToolkit.ErrorHandling.TaskResult" Version="3.0.0-beta007" />
+      <!-- <PackageReference Include="Ply" Version="0.3.1" /> -->
     </ItemGroup>
 
     <ItemGroup>
